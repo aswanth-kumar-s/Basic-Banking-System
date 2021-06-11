@@ -7,10 +7,10 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
 @SpringBootApplication
-public class KTsessionApplication {
+public class BasicBankingSystemApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(KTsessionApplication.class, args);
+		SpringApplication.run(BasicBankingSystemApplication.class, args);
 	}
 
 	@Configuration
