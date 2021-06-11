@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>GRIP Task#1 | GBSHistory</title>
+        <link rel="shortcut icon" type="image/jpg" th:href="@{/images/fav-icon.jpg}"/>
+        <style>
+        body{
+            font-family: Verdana, sans-serif;
+            color: white;
+        }
+        h1 {
+            text-align: center;
+        }
+        .header {
+            overflow: hidden;
+            background-color: rgb(4, 63, 49);
+        }
+        .header a {
+           float: left;
+           font-size: 16px;
+           color: white;
+           text-align: center;
+           padding: 14px 17px;
+           text-decoration: none;
+        }
+        .header a:hover, .dropdown:hover .dropbtn {
+            background-color: red;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(199, 44, 44, 0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown {
+            float: right;
+            overflow: hidden;
+        }
+        .dropdown .dropbtn {
+            font-size: 16px;  
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+        </style>
+    </head>
+    <body th:style="'background-image: url(/images/home-background.jpg);'">
+        <h1 th:style="'text-align: center;'"> GRIP | Basic Banking System </h1><br>
+        <div class="header">
+            <a th:href="@{/BBS/home}">Home&#127968;</a>
+            <div class="dropdown">
+                <button class="dropbtn">Contact Us&#9660;</button>
+                <div class="dropdown-content">
+                  <a href="https://www.facebook.com">Facebook</a>
+                  <a href="https://www.instagram.com">Instagram</a>
+                  <a href="https://www.twitter.com">Twitter</a>
+                  <a href="https://www.youtube.com">Youtube</a>
+                </div>
+              </div> 
+        </div><br>
+        <div>
+            <h3 th:style="'color: violet;'">History of GBS:</h3>
+            <p>Grip Banking System (GBS) was formed in 1955 at the initiative of the World Bank, the Government of India and representatives of Indian industry. The principal objective was to create a development financial institution for providing medium-term and long-term project financing to Indian businesses. Until the late 1980s, GBS primarily focused its activities on project finance, providing long-term funds to a variety of industrial projects. With the liberalization of the financial sector in India in the 1990s, GBS transformed its business from a development financial institution offering only project finance to a diversified financial services provider that, along with its subsidiaries and other group companies, offered a wide variety of products and services. As India’s economy became more market-oriented and integrated with the world economy, GBS capitalized on the new opportunities to provide a wider range of financial products and services to a broader spectrum of clients. GBS Bank was incorporated in 1994 as a part of the GBS group. In 1999, GBS became the first Indian company and the first bank or financial institution from non-Japan Asia to be listed on the New York Stock Exchange.</p>
+            <p>The issue of universal banking, which in the Indian context meant conversion of long-term lending institutions such as GBS into commercial banks, had been discussed at length in the late 1990s. Conversion into a bank offered GBS the ability to accept low-cost demand deposits and offer a wider range of products and services, and greater opportunities for earning non-fund based income in the form of banking fees and commissions. After consideration of various corporate structuring alternatives in the context of the emerging competitive scenario in the Indian banking industry, and the move towards universal banking, the managements of GBS and GBS Bank formed the view that the merger of GBS with GBS Bank would be the optimal strategic alternative for both entities, and would create the optimal legal structure for GBS group's universal banking strategy. The merger would enhance value for GBS shareholders through the merged entity's access to low-cost deposits, greater opportunities for earning fee-based income and the ability to participate in the payments system and provide transaction-banking services. The merger would enhance value for GBS Bank shareholders through a large capital base and scale of operations, seamless access to GBS's strong corporate relationships built up over five decades, entry into new business segments, higher market share in various business segments, particularly fee-based services, and access to the vast talent pool of GBS and its subsidiaries.</p>
+            <p>In October 2001, the Boards of Directors of GBS and GBS Bank approved the merger of GBS and two of its wholly-owned retail finance subsidiaries, GBS Personal Financial Services Limited and GBS Capital Services Limited, with GBS Bank. The merger was approved by shareholders of GBS and GBS Bank in January 2002, by the High Court of Gujarat at Ahmedabad in March 2002, and by the High Court of Judicature at Mumbai and the Reserve Bank of India in April 2002. Consequent to the merger, the GBS group's financing and banking operations, both wholesale and retail, were integrated in a single entity.</p>
+        </div>
+    </body>
+</html>

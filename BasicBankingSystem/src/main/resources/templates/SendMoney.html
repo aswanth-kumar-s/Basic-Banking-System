@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset="UTF-8">
+      <title>GRIP Task#1 | Send Money</title>
+      <link rel="shortcut icon" type="image/jpg" th:href="@{/images/fav-icon.jpg}"/>
+      <style>
+         body{
+            font-family: Verdana, sans-serif;
+         }
+         h1 {
+            text-align: center;
+         }
+         .header{
+            display: flex;
+            justify-content: center;
+            position: relative;
+         }
+         .header a {
+            position: absolute;
+            left: 0;
+            margin-top: 12px;
+            margin-left: 12px;
+            border-radius: 5px;
+            background-color: #636d2c;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            transition: all 0.5s;
+            cursor: pointer;
+            float: left;
+            font-size: 18px;
+            width: 100px;
+            padding: 12px;
+         }  
+         .header a #back:after {
+            content: '\00ab';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            left: -20px;
+            transition: 0.5s;
+         }
+         .header a:hover #back {
+            padding-left: 25px;
+         }
+         .header a:hover #back:after {
+            opacity: 1;
+            left: 0;
+         }
+         .header a:hover {
+            background-color: rgb(139, 0, 86);
+         }
+         .header a span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+         }
+         form{
+            background-color: transparent;
+            display: flex;
+            margin-top: 40px;
+            overflow: hidden;
+            justify-content: center;
+         }
+         .container{
+            position: relative;
+            width: 550px;
+            height: 500px;
+            border-radius: 20px;
+            padding: 40px;
+            box-sizing: border-box;
+            box-shadow: 14px 14px 20px #cbced1,-14px -14px 20px white;
+         }
+         .inputs{
+            text-align: left;
+            margin-top: 30px;
+         }
+         label,input,select,button{
+            display: block;
+            width: 100%;
+            padding: 0;
+            border: none;
+            overflow: none;
+            box-sizing: border-box;
+         }
+         label{
+            margin-bottom: 4px;
+            color: white;
+         }
+         label:nth-of-type(2){
+            margin-top: 12px;
+         }
+         label:nth-of-type(3){
+            margin-top: 12px;
+         }
+         input::placeholder{
+            color: gray;
+         }
+         input,select{
+            background: #ecf0f3;
+            padding-left: 20px;
+            height: 50px;
+            font-size: 14px;
+            border-radius: 50px;
+            box-shadow: inset 6px 6px 6px #cbced1,inset -6px -6px 6px white;
+            padding: 10px;
+         }
+         button {
+            border-radius: 20px;
+            background-color: #15c8e7;
+            border: none;
+            color: #FFFFFF;
+            align-items: center;
+            text-align: center;
+            font-size: 18px;
+            width: 150px;
+            height: 40px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+            padding: 12px 12px;
+         }
+         button:hover {
+            box-shadow: none;
+            background-color: darkcyan;
+         }
+         button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+         }
+         button #send:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+         }
+         button:hover #send {
+            padding-right: 25px;
+         }
+         button:hover #send:after {
+            opacity: 1;
+            right: 0;
+         }
+      </style>
+   </head>
+   <body th:style="'background-image: url(/images/form-background.jpg);'">
+     <div>
+         <div class="header">
+            <a th:href="@{/BBS/viewUser}" style="color: white"><span id="back">Back</span></a>
+            <h1 th:style="'text-align: center;color: white;'"> GRIP | Basic Banking System </h1>
+         </div>
+         <center>
+            <form th:action="@{/BBS/history/{from}(from=${fromMail})&{to}(to=${toMail})&{amount}(amount=${amount})}" method="post">
+               <div class="container">
+                  <div class="inputs">
+                     <label>From:</label>
+                     <input name="fromMail" type="email" th:value="${fromUser}" title="Select Sender" readonly required/>
+                     <label>To:</label>
+                     <select id="tomail" name="toMail" title="Select Receipient" required>
+                        <option></option>
+                        <option th:each="row : ${listUser}" th:text="${row}"></option>
+                     </select>
+                     <label>Amount:</label>
+                     <input id="amount" name="amount" type="number" title="One can send only 1,00,000 at a time" min="1" max="100000" placeholder="Enter Amount" required/>
+                  </div>
+               <button th:style="'color: white;margin-top: 20px;'"><span id="send">Send</span></button>
+               </div>
+            </form>
+         </center>
+     </div>
+   </body>
+</html>

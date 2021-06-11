@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+   <head>
+        <title>Grip Task#1 | Error</title>
+        <link rel="shortcut icon" type="image/jpg" th:href="@{/images/fav-icon.jpg}"/>
+        <style>
+             body{
+            font-family: Verdana, sans-serif;
+         }
+         h1 {
+            text-align: center;
+         }
+         .header{
+            display: flex;
+            justify-content: center;
+            position: relative;
+         }
+         .header a {
+            position: absolute;
+            left: 0;
+            margin-top: 12px;
+            margin-left: 12px;
+            border-radius: 5px;
+            background-color: #636d2c;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            transition: all 0.5s;
+            cursor: pointer;
+            float: left;
+            font-size: 18px;
+            width: 100px;
+            padding: 12px;
+         }  
+         .header a #back:after {
+            content: '\00ab';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            left: -20px;
+            transition: 0.5s;
+         }
+         .header a:hover #back {
+            padding-left: 25px;
+         }
+         .header a:hover #back:after {
+            opacity: 1;
+            left: 0;
+         }
+         .header a:hover {
+            background-color: rgb(139, 0, 86);
+         }
+         .header a span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+         }
+        </style>
+   </head>
+   <body th:style="'background-color:gray'">
+     <div class="header">
+          <a th:href="@{/BBS/home}" style="color: white"><span id="back">Back</span></a>
+          <h1 th:style="'text-align: center;color: white;'"> GRIP | Basic Banking System </h1>
+       </div>
+       <div th:style="'align=center;background-color:orange;padding:20px;margin:50px;color:white;'" th:text="${error}"></div>
+    </body>
+ </html>

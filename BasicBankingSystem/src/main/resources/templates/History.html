@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <title>GRIP Task#1 | Transaction History</title>
+      <link rel="shortcut icon" type="image/jpg" th:href="@{/images/fav-icon.jpg}"/>
+      <style>
+         body{
+            color: rgb(41, 39, 39);
+            font-family: Verdana, sans-serif;
+         }
+         .header{
+            display: flex;
+            justify-content: center;
+            position: relative;
+         }
+         .header a {
+            position: absolute;
+            left: 0;
+            margin-top: 12px;
+            margin-left: 12px;
+            border-radius: 5px;
+            background-color: #636d2c;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            transition: all 0.5s;
+            cursor: pointer;
+            float: left;
+            font-size: 18px;
+            width: 100px;
+            padding: 12px;
+         }  
+         .header a #back:after {
+            content: ' \00ab';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            left: -20px;
+            transition: 0.5s;
+         }
+         .header a:hover #back {
+            padding-left: 25px;
+         }
+         .header a:hover #back:after {
+            opacity: 1;
+            left: 0;
+         }
+         .header a:hover {
+            background-color: rgb(139, 0, 86);
+         }
+         .header a span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+         }
+         table{
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 50px;
+         }
+         th{
+            color: black;
+            background-color: turquoise;
+         }
+         tbody tr{
+            height: 60px;
+         }
+         td,th {
+            border: 1px solid rgb(94, 91, 91);
+            padding: 8px;
+            text-align: center;
+            font-size: 20px;
+         }
+         tr:hover {
+            background-color: rgb(21, 178, 240);
+            color: black;
+         }
+      </style>
+   </head>
+   <body th:style="'background-image: url(/images/table-background.jpg);'">
+       <div class="header">
+          <a th:href="@{/BBS/home}" style="color: white"><span id="back">Back</span></a>
+          <h1 style="text-align: center;"> GRIP | Basic Banking System </h1><br>
+       </div>
+       <table>
+          <thead>
+             <tr>
+                <th>ID</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Amount</th>
+                <th>Date/Time</th>
+             </tr>
+          </thead>
+          <tbody>
+              <tr th:each="row : ${listHistory}">
+                    <td th:text="${row.id}"></td>
+                    <td th:text="${row.fromMail}"></td>
+                    <td th:text="${row.toMail}"></td>
+                    <td th:text="${row.amount}"></td>
+                    <td th:text="${row.timestamp}"></td>
+              </tr>
+          </tbody>
+       </table>
+   </body>
+</html>

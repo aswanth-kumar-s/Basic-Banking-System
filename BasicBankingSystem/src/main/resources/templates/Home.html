@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>GRIP Task#1 | Home</title>
+        <link rel="shortcut icon" type="image/jpg" th:href="@{/images/fav-icon.jpg}"/>
+        <style>
+        body{
+            font-family: Verdana, sans-serif;
+            color: white;
+        }
+        h1 {
+            text-align: center;
+        }
+        .header {
+            overflow: hidden;
+            background-color: rgb(4, 63, 49);
+            height: 50px;
+        }
+        .header a {
+           float: left;
+           font-size: 16px;
+           color: white;
+           text-align: center;
+           padding: 14px 14px;
+           text-decoration: none;
+        }
+        .header a:hover, .dropdown:hover .dropbtn {
+            background-color: red;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(199, 44, 44, 0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown {
+            float: right;
+            overflow: hidden;
+        }
+        .dropdown .dropbtn {
+            font-size: 16px;  
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+        .slideContainer {
+           position: relative;
+           padding: 40px;
+        }
+        .dot{
+           padding-bottom: 20px;
+           margin-top: 50px;
+        }
+        .Navdot {
+           cursor: pointer;
+           height: 15px;
+           width: 15px;
+           margin: 0 2px;
+           background-color: rgb(177, 177, 180);
+           border-radius: 50%;
+           display: inline-block;
+           transition: background-color 0.6s ease;
+           display: inline-block;
+           margin-top: 30px;
+        }
+        .selected, .Navdot:hover {
+           background-color: #db1a1a;
+        }
+        .navigate{
+            margin-top: 50px;
+        }
+        .navigate a {
+            margin-top: 12px;
+            margin-left: 12px;
+            border-radius: 5px;
+            background-color: #636d2c;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            transition: all 0.5s;
+            cursor: pointer;
+            width: 200px;
+            font-size: 18px;
+            padding: 12px;
+        }  
+        .navigate a span:after {
+            content: ' \00bb';
+            opacity: 0;
+            top: 0;
+            right: -29px;
+            transition: 0.5s;
+        }
+        .navigate a:hover {
+            padding-right: 25px;
+            background-color: rgb(238, 20, 155);
+        }
+        .navigate a:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+        .navigate a span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+        @media only screen and (max-width: 450px) {
+          .prevBtn, .nextBtn, .Caption {
+             font-size: 16px;
+          }
+        }
+        </style>
+    </head>
+    <body th:style="'background-image: url(/images/home-background.jpg);'">
+        <h1 th:style="'text-align: center;'"> GRIP | Basic Banking System </h1><br>
+        <p th:style="'color: gray;'"><b>Welcome to GRIP Banking System!</b></p><br>
+        <div class="header">
+            <a th:href="@{/BBS/home}">Home&#127968;</a>
+            <a th:style="'padding-top:17px;'" th:href="@{/BBS/home/aboutUs}">About Us</a>
+            <div class="dropdown">
+                <button class="dropbtn">Contact Us&#9660;</button>
+                <div class="dropdown-content">
+                  <a href="https://www.facebook.com">Facebook</a>
+                  <a href="https://www.instagram.com">Instagram</a>
+                  <a href="https://www.twitter.com">Twitter</a>
+                  <a href="https://www.youtube.com">Youtube</a>
+                </div>
+              </div> 
+        </div><br>
+        <div class="slideContainer">
+            <div class="Slide">
+                <center><b>Grip Banking System (GBS) a Fortune 500 company, is an Indian Multinational, Public Sector Banking and Financial services statutory body headquartered in Mumbai. The rich heritage and legacy of over 200 years, accredits SBI as the most trusted Bank by Indians through generations.As a publicly traded company, we’re also governed by a 13-member Board of Directors, which is chaired by Cecere. This group brings decades of expertise from a variety of industries ranging from healthcare and logistics to retail and tech.</b></center>
+            </div>
+            <div class="Slide">
+                <center><b>Our company continues to be recognized for our ethical and inclusive culture, management quality, social responsibility, digital capabilities and more. Notable recent honors include being named one of the 2021 World’s Most Ethical Companies® by the Ethisphere® Institute, the seventh consecutive year we’ve been honored; our GBS Bank Mobile App being rated best for customer service by Business Insider Intelligence; and being honored with a spot on the 2020 DiversityInc Top 50 Companies for Diversity.</b></center>
+            </div>
+            <div class="Slide">
+                <center><b>The Bank has successfully diversified businesses through its 11 subsidiaries i.e SBI General Insurance, Gbs Life Insurance, GBS Mutual Fund, GBS Card, etc. It has spread its presence globally and operates across time zones through 233 offices in 32 foreign countries.Growing with times, GBS continues to redefine banking in India, as it aims to offer responsible and sustainable Banking solutions. 79% of transactions and 61% of sales now online. Named one of the Top 50 Companies for Diversity</b></center>
+            </div><br>
+            <div class="dot" style="text-align:center">
+                <span class="Navdot" onclick="currentSlide(1)"></span>
+                <span class="Navdot" onclick="currentSlide(2)"></span>
+                <span class="Navdot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+        <div class="navigate">
+            <center>
+                <a th:href="@{/BBS/viewUser}"><span>View Customers</span></a>
+                <a th:href="@{/BBS/viewHistory}"><span>View Transactions</span></a>
+            </center>
+        </div>
+       <script>
+           var slideIndex = 1;
+           showSlides(slideIndex);
+           function plusSlides(n) {
+              showSlides(slideIndex += n);
+           }
+          function currentSlide(n) {
+             showSlides(slideIndex = n);
+          }
+          function showSlides(n) {
+             var i;
+             var slides = document.getElementsByClassName("Slide");
+             var dots = document.getElementsByClassName("Navdot");
+             if (n > slides.length) {slideIndex = 1}    
+             if (n < 1) {slideIndex = slides.length}
+             for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+             }
+             for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" selected", "");
+             }
+             slides[slideIndex-1].style.display = "block";  
+             dots[slideIndex-1].className += " selected";
+            }
+            window.onload= function () {
+               setInterval(function(){ 
+                    plusSlides(1);
+            }, 3000);
+          }
+    </script>
+    </body>
+</html>
